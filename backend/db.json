@@ -5,6 +5,12 @@
             "firstname": "Joao",
             "lastname": "Silva",
             "email": "joao@email.com"
+        },
+        {
+            "id": 2,
+            "firstname": "Maria",
+            "lastname": "Clara",
+            "email": "mariaclara@email.com"
         }
     ]
 }
