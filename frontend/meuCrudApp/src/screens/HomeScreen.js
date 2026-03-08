@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
+import { View, Text, FlatList } from 'react-native';
 
 import Botao from '../components/Botao';
 
@@ -55,4 +56,6 @@ const HomeScreen = ({ navigation }) => {
             />
         </View>
     );
-}
+};
+
+export default HomeScreen;
