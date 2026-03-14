@@ -10,28 +10,6 @@ const AddEditScreen = ({ route, navigation }) => {
 
     const save = () => {
 
-        const dataPerson = { firstname, email };
-
-        if (person) {
-            fetch(`https://localhost:3000/people/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dataPerson)
-            })
-            .then(() => navigation.goBack())
-            .catch(err => console.error(err));
-        
-        } else {
-            fetch('https://localhost:3000/people', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dataPerson)
-            })
-            .then(() => navigation.goBack())
-            .catch(err => console.error(err));
-        }
-    };
-
     return (
         <View style={styles.container}>
             <TextInput 
