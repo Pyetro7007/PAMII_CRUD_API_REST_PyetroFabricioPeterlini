@@ -6,15 +6,15 @@ export const getPerson = async () => {
 };
 
 export const addPerson = async (newPerson) => {
-    const response = await api.post('/peoples', newPerson);
+    const response = await api.post('/people', newPerson);
     return response.data;
 };
 
 export const updatePerson = async (id, updatedPerson) => {
-    const response = await api.post(`/peoples/${id}`, updatedPerson);
+    const response = await api.put(`/people/${id}`, updatedPerson);
     return response.data;
 };
 
 export const deletePerson = async (id) => {
-    const response = await api.post(`/peoples/${id}`);
+    await api.delete(`/people/${id}`);
 };

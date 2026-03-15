@@ -2,9 +2,9 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 
 // children - conteúdo do botão
 // aoPressionar - mesma coisa que o onPress, função que é executada quando o botão é apertado
-export default function Botao({children, aoPressionar}){
+export default function Button({children, aoPressionar}){
     return(
-        <TouchableOpacity style={styles.botao}onPress={aoPressionar} >
+        <TouchableOpacity style={styles.button}onPress={aoPressionar} >
             {children}
         </TouchableOpacity>
     )
@@ -12,12 +12,14 @@ export default function Botao({children, aoPressionar}){
 
 // estilizações do botão, usado em todos as outras telas
 const styles = StyleSheet.create({
-    botao:{
+    button:{
         flexDirection: 'row',
-        marginBottom: 10,
+        marginBottom: 15,
         alignItems: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        backgroundColor: '#d4eff1',
         padding: 10,
         borderRadius: 50,
+        borderWidth: 1,
+        borderColor: '#83c5be',
     },
 });

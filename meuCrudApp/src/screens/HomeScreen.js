@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator, Dimensions } from 'react-native';
 
-import Botao from '../components/Botao';
+import Button from '../components/Button';
 import { getPerson, deletePerson } from '../api/peopleService';
+import styles from '../styles/styles';
+
+const windowWidth = Dimensions.get('window').width;
 
 const HomeScreen = ({ navigation }) => {
     const [people, setPeople] = useState([]);
@@ -16,6 +19,7 @@ const HomeScreen = ({ navigation }) => {
             setPeople(data);
         } catch (err) {
             setError("Não foi possível carregar os detalhes do personagem");
+        } finally {
             setLoading(false);
         }
     };
@@ -51,27 +55,35 @@ const HomeScreen = ({ navigation }) => {
     };
 
     return (
-        <View>
-            <Botao aoPressionar={() => navigation.navigate('AddEditScreen')}>
-                <Text style={{color: 'white'}}>+ Adicionar Pessoa</Text>
-            </Botao>
+        <View style={styles.container}>
+            <View style={styles.headerHome}>
+                <Text style={styles.homeTitle}>Lista de Pessoas</Text>
+                <Button aoPressionar={() => navigation.navigate('AddEditScreen')}>
+                    <Text style={styles.buttonTextAdd}>+ Adicionar Pessoa</Text>
+                </Button>
+            </View>
 
             <FlatList 
                 data={people}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                    <View>
-                        <Text>{item.firstname} {item.lastname}</Text>
-                        <Text>{item.email}</Text>
+                    <View style={styles.card}>
+                        <Text style={styles.cardTitle}>
+                            {item.firstname} {item.lastname}
+                        </Text>
+                        <Text style={styles.text}>{item.email}</Text>
 
                         <View>
-                            <Botao aoPressionar={() => navigation.navigate('AddEditScreen', { person: item })}>
-                                <Text style={{color: 'white'}}>Editar</Text>
-                            </Botao>
+                            <Button aoPressionar={() => navigation.navigate('AddEditScreen', { person: item })}>
+                                <Text style={styles.textButton}>Editar</Text>
+                            </Button>
 
-                            <Botao aoPressionar={async () => {await deletePerson(item.id), loadPeople()}}>
-                                <Text style={{color: 'white'}}>Excluir</Text>
-                            </Botao>
+                            <Button aoPressionar={async () => {
+                                await deletePerson(item.id);
+                                loadPeople();
+                            }}>
+                                <Text style={styles.buttonText}>Excluir</Text>
+                            </Button>
                         </View>
                     </View>
                 )}
