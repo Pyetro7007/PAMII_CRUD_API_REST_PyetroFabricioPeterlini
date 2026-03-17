@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { View, Text, FlatList, ActivityIndicator, Dimensions } from 'react-native';
 
 import Button from '../components/Button';
+import Card from '../components/Card';
 import { getPerson, deletePerson } from '../api/peopleService';
 import styles from '../styles/styles';
 
@@ -18,7 +19,7 @@ const HomeScreen = ({ navigation }) => {
             const data = await getPerson();
             setPeople(data);
         } catch (err) {
-            setError("Não foi possível carregar os detalhes do personagem");
+            setError("Não foi possível carregar");
         } finally {
             setLoading(false);
         }
@@ -67,24 +68,10 @@ const HomeScreen = ({ navigation }) => {
                 data={people}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                    <View style={styles.card}>
-                        <Text style={styles.cardTitle}>
-                            {item.firstname} {item.lastname}
-                        </Text>
-                        <Text style={styles.text}>{item.email}</Text>
-
-                        <View>
-                            <Button aoPressionar={() => navigation.navigate('AddEditScreen', { person: item })}>
-                                <Text style={styles.textButton}>Editar</Text>
-                            </Button>
-
-                            <Button aoPressionar={async () => {
-                                await deletePerson(item.id);
-                                loadPeople();
-                            }}>
-                                <Text style={styles.buttonText}>Excluir</Text>
-                            </Button>
-                        </View>
+                    <View>
+                        <Card>
+                            
+                        </Card>
                     </View>
                 )}
             />

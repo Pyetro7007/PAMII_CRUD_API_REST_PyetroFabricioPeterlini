@@ -37,15 +37,6 @@ const styles = StyleSheet.create({
     },
 
     // Cards
-    card: {
-        backgroundColor: '#e0f4f6',
-        borderRadius: 8,
-        padding: 16,
-        marginBottom: 12,
-        borderWidth: 1,
-        borderColor: '#83c5be',
-        width: windowWidth - 32,
-    },
 
     // Textos
     homeTitle: {
