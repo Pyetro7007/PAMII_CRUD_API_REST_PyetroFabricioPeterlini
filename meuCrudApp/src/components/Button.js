@@ -1,26 +1,14 @@
 import { TouchableOpacity, StyleSheet } from "react-native";
 
+import styles from '../styles/styles';
+
 // children - conteúdo do botão
-// aoPressionar - mesma coisa que o onPress, função que é executada quando o botão é apertado
-export default function Button({children, aoPressionar}){
+// onPressButton - mesma coisa que o onPress, função que é executada quando o botão é apertado
+export default function Button({children, onPressButton}){
     return(
-        <TouchableOpacity style={styles.button}onPress={aoPressionar} >
+        <TouchableOpacity style={styles.button}onPress={onPressButton} >
             {children}
         </TouchableOpacity>
     )
-}
-
-// estilizações do botão, usado em todos as outras telas
-const styles = StyleSheet.create({
-    button:{
-        flexDirection: 'row',
-        marginBottom: 15,
-        alignItems: 'center',
-        backgroundColor: '#d4eff1',
-        padding: 10,
-        borderRadius: 50,
-        borderWidth: 1,
-        borderColor: '#83c5be',
-    },
-});
+};
 

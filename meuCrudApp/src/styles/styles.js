@@ -36,8 +36,6 @@ const styles = StyleSheet.create({
         width: windowWidth - 32,
     },
 
-    // Cards
-
     // Textos
     homeTitle: {
         fontSize: 24,
@@ -51,12 +49,6 @@ const styles = StyleSheet.create({
         color: '#00343a',
         marginBottom: 24,
         textAlign: 'center',
-    },
-    cardTitle: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: '#006d77',
-        marginBottom: 4,
     },
     text: {
         fontSize: 14,
@@ -85,6 +77,16 @@ const styles = StyleSheet.create({
     },
 
     // Botões
+    button:{
+        flexDirection: 'row',
+        marginBottom: 15,
+        alignItems: 'center',
+        backgroundColor: '#d4eff1',
+        padding: 10,
+        borderRadius: 50,
+        borderWidth: 1,
+        borderColor: '#83c5be',
+    },
     buttonText: {
         color: '#e63946',
         fontSize: 16,
@@ -96,6 +98,22 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     
+    // Cards
+    card: {
+        backgroundColor: '#e0f4f6',
+        borderRadius: 8,
+        padding: 16,
+        marginBottom: 12,
+        borderWidth: 1,
+        borderColor: '#83c5be',
+        width: windowWidth - 32,
+    },
+    cardTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#006d77',
+        marginBottom: 4,
+    },
 });
 
 export default styles;

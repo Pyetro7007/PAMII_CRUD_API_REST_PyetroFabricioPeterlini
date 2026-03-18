@@ -1,22 +1,10 @@
 {
   "people": [
     {
-      "firstname": "João",
-      "lastname": "Silva",
-      "email": "joao@email.com",
-      "id": "1"
-    },
-    {
-      "firstname": "Ana",
-      "lastname": "Clara",
-      "email": "anaclara@email.com",
-      "id": "2"
-    },
-    {
-      "id": "0aca",
       "firstname": "Pyetro",
-      "lastname": "Fabrício Peterlini ",
-      "email": "pyetropeterlini@gmail.com"
+      "lastname": "Fabrício Peterlini",
+      "email": "pyetrofabricio2014@gmail.com",
+      "id": "a34e"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

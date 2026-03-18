@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, FlatList, ActivityIndicator, Dimensions } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 
 import Button from '../components/Button';
 import Card from '../components/Card';
-import { getPerson, deletePerson } from '../api/peopleService';
+import { getPerson } from '../api/peopleService';
 import styles from '../styles/styles';
-
-const windowWidth = Dimensions.get('window').width;
 
 const HomeScreen = ({ navigation }) => {
     const [people, setPeople] = useState([]);
@@ -19,13 +17,14 @@ const HomeScreen = ({ navigation }) => {
             const data = await getPerson();
             setPeople(data);
         } catch (err) {
+            console.error(err);
             setError("Não foi possível carregar");
         } finally {
             setLoading(false);
         }
     };
 
-    // Garante que alista carrega ao abrir
+    // Garante que a lista carrega ao abrir
     useEffect(() => {
         loadPeople();
     }, []);
@@ -59,7 +58,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.container}>
             <View style={styles.headerHome}>
                 <Text style={styles.homeTitle}>Lista de Pessoas</Text>
-                <Button aoPressionar={() => navigation.navigate('AddEditScreen')}>
+                <Button onPressButton={() => navigation.navigate('AddEditScreen')}>
                     <Text style={styles.buttonTextAdd}>+ Adicionar Pessoa</Text>
                 </Button>
             </View>
@@ -69,9 +68,11 @@ const HomeScreen = ({ navigation }) => {
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View>
-                        <Card>
-                            
-                        </Card>
+                        <Card
+                            item={item}
+                            navigation={navigation}
+                            loadPeople={loadPeople}
+                        />
                     </View>
                 )}
             />

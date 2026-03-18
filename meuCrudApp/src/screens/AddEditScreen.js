@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, Dimensions } from 'react-native';
+import { View, TextInput, Text } from 'react-native';
 
 import Button from '../components/Button';
 import { addPerson, updatePerson } from '../api/peopleService';
 import styles from '../styles/styles';
-
-const windowWidth = Dimensions.get('window').width;
 
 const AddEditScreen = ({ route, navigation }) => {
     const person = route.params?.person;
@@ -63,11 +61,11 @@ const AddEditScreen = ({ route, navigation }) => {
                 autoCapitalize="none"
             />
 
-            <Button aoPressionar={save}>
+            <Button onPressButton={save}>
                 <Text style={styles.buttonTextAdd}>{person ? "Salvar" : "Adicionar"}</Text>
             </Button>
 
-            <Button aoPressionar={() => navigation.goBack()}>
+            <Button onPressButton={() => navigation.goBack()}>
                 <Text style={styles.buttonTextAdd}>Cancelar</Text>
             </Button>
         </View>

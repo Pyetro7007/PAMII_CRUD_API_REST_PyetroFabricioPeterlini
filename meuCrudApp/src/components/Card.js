@@ -1,11 +1,10 @@
-import {StyleSheet, Text, View} from "react-native";
+import { Text, View } from "react-native";
 
 import Button from '../components/Button';
 import { deletePerson } from '../api/peopleService';
+import styles from '../styles/styles';
 
-const windowWidth = Dimensions.get('window').width;
-
-export default function Card (item, navigation, loadPeople) {
+export default function Card ({item, navigation, loadPeople}) {
     return (
         <View style={styles.card}>
 
@@ -16,11 +15,11 @@ export default function Card (item, navigation, loadPeople) {
             <Text style={styles.text}>{item.email}</Text>
 
             <View>
-                <Button aoPressionar={() => navigation.navigate('AddEditScreen', { person: item })}>
+                <Button onPressButton={() => navigation.navigate('AddEditScreen', { person: item })}>
                     <Text style={styles.textButton}>Editar</Text>
                 </Button>
 
-                <Button aoPressionar={async () => {
+                <Button onPressButton={async () => {
                     await deletePerson(item.id);
                     loadPeople();
                 }}>
@@ -31,14 +30,6 @@ export default function Card (item, navigation, loadPeople) {
     )
 }
 
-const styles = StyleSheet.create({
-    card: {
-        backgroundColor: '#e0f4f6',
-        borderRadius: 8,
-        padding: 16,
-        marginBottom: 12,
-        borderWidth: 1,
-        borderColor: '#83c5be',
-        width: windowWidth - 32,
-    },
-});
+// const styles = StyleSheet.create({
+
+// });
