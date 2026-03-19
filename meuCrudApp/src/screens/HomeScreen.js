@@ -3,7 +3,7 @@ import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 
 import Button from '../components/Button';
 import Card from '../components/Card';
-import { getPerson } from '../api/peopleService';
+import { getPeople } from '../api/peopleService';
 import styles from '../styles/styles';
 
 const HomeScreen = ({ navigation }) => {
@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
     const loadPeople = async () => {
         try {
             setLoading(true);
-            const data = await getPerson();
+            const data = await getPeople();
             setPeople(data);
         } catch (err) {
             console.error(err);
