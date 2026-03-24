@@ -13,6 +13,7 @@ export default function Card ({item, navigation, loadPeople}) {
             </Text>
 
             <Text style={styles.text}>{item.email}</Text>
+            <Text style={styles.text}>{item.phone}</Text>
 
             <View>
                 <Button onPressButton={() => navigation.navigate('AddEditScreen', { person: item })}>
@@ -29,7 +30,3 @@ export default function Card ({item, navigation, loadPeople}) {
         </View>
     )
 }
-
-// const styles = StyleSheet.create({
-
-// });

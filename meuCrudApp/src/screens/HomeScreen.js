@@ -67,13 +67,11 @@ const HomeScreen = ({ navigation }) => {
                 data={people}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                    <View>
-                        <Card
-                            item={item}
-                            navigation={navigation}
-                            loadPeople={loadPeople}
-                        />
-                    </View>
+                    <Card
+                        item={item}
+                        navigation={navigation}
+                        loadPeople={loadPeople}
+                    />
                 )}
             />
         </View>

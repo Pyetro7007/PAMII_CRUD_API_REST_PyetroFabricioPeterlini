@@ -11,14 +11,15 @@ const AddEditScreen = ({ route, navigation }) => {
     const [firstname, setFirstname] = useState(person?.firstname || '');
     const [lastname, setLastname] = useState(person?.lastname || '');
     const [email, setEmail] = useState(person?.email || '');
+    const [phone, setPhone] = useState(person?.phone || '');
     const [error, setError] = useState(null);
 
     const save = async () => {
         try {
             if (person) {
-                await updatePerson(person.id, { firstname, lastname, email });
+                await updatePerson(person.id, { firstname, lastname, email, phone });
             } else {
-                await addPerson({ firstname, lastname, email });
+                await addPerson({ firstname, lastname, email, phone });
             }
             navigation.goBack();
         } catch (err) {
@@ -59,6 +60,14 @@ const AddEditScreen = ({ route, navigation }) => {
                 placeholder="Email"
                 keyboardType="email-address"
                 autoCapitalize="none"
+            />
+            <TextInput 
+                style={styles.input}
+                value={phone}
+                onChangeText={setPhone}
+                placeholderTextColor={'#4a9ea8'}
+                placeholder="Phone"
+                keyboardType="phone-pad"
             />
 
             <Button onPressButton={save}>

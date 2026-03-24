@@ -4,7 +4,7 @@
       "firstname": "Pyetro",
       "lastname": "Fabrício Peterlini",
       "email": "pyetrofabricio2014@gmail.com",
-      "id": "a34e"
+      "id": "1"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
