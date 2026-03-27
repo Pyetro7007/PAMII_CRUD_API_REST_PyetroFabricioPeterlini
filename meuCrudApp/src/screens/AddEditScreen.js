@@ -41,16 +41,18 @@ const AddEditScreen = ({ route, navigation }) => {
             <TextInput 
                 style={styles.input}
                 value={firstname}
-                onChangeText={setFirstname}
+                onChangeText={(text) => setFirstname(text.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''))}
                 placeholderTextColor={'#4a9ea8'}
                 placeholder="Nome"
+                maxLength={30}
             />
             <TextInput 
                 style={styles.input}
                 value={lastname}
-                onChangeText={setLastname}
+                onChangeText={(text) => setLastname(text.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''))}
                 placeholderTextColor={'#4a9ea8'}
                 placeholder="Sobrenome"
+                maxLength={50}
             />
             <TextInput 
                 style={styles.input}
@@ -60,14 +62,16 @@ const AddEditScreen = ({ route, navigation }) => {
                 placeholder="Email"
                 keyboardType="email-address"
                 autoCapitalize="none"
+                maxLength={320}
             />
             <TextInput 
                 style={styles.input}
                 value={phone}
                 onChangeText={setPhone}
                 placeholderTextColor={'#4a9ea8'}
-                placeholder="Phone"
+                placeholder="Telefone"
                 keyboardType="phone-pad"
+                maxLength={11}
             />
 
             <Button onPressButton={save}>
