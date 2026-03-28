@@ -40,8 +40,8 @@ const HomeScreen = ({ navigation }) => {
     if (loading) {
         return (
             <View style={styles.centerMessage}>
-                <ActivityIndicator size="large" color="#000000"/>
-                <Text>Carregando...</Text>
+                <ActivityIndicator size="large" color="#ffffff"/>
+                <Text style={{color:"#ffffff"}}>Carregando...</Text>
             </View>
         );
     };

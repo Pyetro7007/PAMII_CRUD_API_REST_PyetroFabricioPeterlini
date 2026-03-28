@@ -17,14 +17,14 @@ export default function Card ({item, navigation, loadPeople}) {
 
             <View>
                 <Button onPressButton={() => navigation.navigate('AddEditScreen', { person: item })}>
-                    <Text style={styles.textButton}>Editar</Text>
+                    <Text style={styles.buttonText}>Editar</Text>
                 </Button>
 
                 <Button onPressButton={async () => {
                     await deletePerson(item.id);
                     loadPeople();
                 }}>
-                    <Text style={styles.buttonText}>Excluir</Text>
+                    <Text style={styles.buttonTextdelete}>Excluir</Text>
                 </Button>
             </View>
         </View>

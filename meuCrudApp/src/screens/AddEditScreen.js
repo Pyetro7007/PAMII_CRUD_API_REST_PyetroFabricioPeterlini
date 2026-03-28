@@ -15,6 +15,18 @@ const AddEditScreen = ({ route, navigation }) => {
     const [error, setError] = useState(null);
 
     const save = async () => {
+        // Valida o email antes de salvar
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError('Email inválido, tente novamente');
+            return;
+        }
+
+        if (!firstname || !lastname || !email || !phone) {
+            setError('Preencha todos os campos');
+            return;
+        }
+
         try {
             if (person) {
                 await updatePerson(person.id, { firstname, lastname, email, phone });
@@ -75,11 +87,11 @@ const AddEditScreen = ({ route, navigation }) => {
             />
 
             <Button onPressButton={save}>
-                <Text style={styles.buttonTextAdd}>{person ? "Salvar" : "Adicionar"}</Text>
+                <Text style={styles.buttonText}>{person ? "Salvar" : "Adicionar"}</Text>
             </Button>
 
             <Button onPressButton={() => navigation.goBack()}>
-                <Text style={styles.buttonTextAdd}>Cancelar</Text>
+                <Text style={styles.buttonText}>Cancelar</Text>
             </Button>
         </View>
 

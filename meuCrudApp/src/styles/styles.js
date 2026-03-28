@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     // Container
     container: {
         flex: 1,
-        backgroundColor: '#f0fafb',
+        backgroundColor: '#0d1b1e',
         padding: 16,
     },
 
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f0fafb',
+        backgroundColor: '#112226',
     },
 
     // Headers
@@ -40,13 +40,13 @@ const styles = StyleSheet.create({
     homeTitle: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#00343a',
+        color: '#e0f4f6',
         marginTop: -15,
     },
     addEditTitle: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#00343a',
+        color: '#e0f4f6',
         marginBottom: 24,
         textAlign: 'center',
     },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#4a9ea8',
         marginTop: 4,
-        marginBottom: 8,
+        marginBottom: 4,
     },
     errorText: {
         fontSize: 14,
@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     // Inputs
     input: {
         borderWidth: 1,
-        borderColor: '#83c5be',
+        borderColor: '#1a3a40',
         borderRadius: 8,
         padding: 12,
         marginBottom: 20,
         fontSize: 16,
-        color: '#00343a',
-        backgroundColor: '#f0fafb',
+        color: '#e0f4f6',
+        backgroundColor: '#112226',
         width: windowWidth - 32,
     },
 
@@ -81,37 +81,44 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginBottom: 15,
         alignItems: 'center',
-        backgroundColor: '#d4eff1',
+        backgroundColor: '#006d77',
         padding: 10,
         borderRadius: 50,
         borderWidth: 1,
-        borderColor: '#83c5be',
+        borderColor: '#1a3a40',
     },
-    buttonText: {
+    buttonTextdelete: {
+        marginLeft: 10,
         color: '#e63946',
         fontSize: 16,
         fontWeight: 'bold',
     },
+    buttonText: {
+        marginLeft: 10,
+        color: '#e0f4f6',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
     buttonTextAdd: {
-        color: '#00343a',
+        color: '#e0f4f6',
         fontSize: 16,
         fontWeight: 'bold',
     },
     
     // Cards
     card: {
-        backgroundColor: '#e0f4f6',
+        backgroundColor: '#112226',
         borderRadius: 8,
         padding: 16,
         marginBottom: 12,
         borderWidth: 1,
-        borderColor: '#83c5be',
+        borderColor: '#1a3a40',
         width: windowWidth - 32,
     },
     cardTitle: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#006d77',
+        color: '#83c5be',
         marginBottom: 4,
     },
 });
