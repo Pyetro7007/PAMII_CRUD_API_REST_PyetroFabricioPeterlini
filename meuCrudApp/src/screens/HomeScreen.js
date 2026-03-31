@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator, TextInput } from 'react-native';
 
 import Button from '../components/Button';
 import Card from '../components/Card';
@@ -9,13 +9,20 @@ import styles from '../styles/styles';
 const HomeScreen = ({ navigation }) => {
     const [people, setPeople] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState('');
     const [error, setError] = useState(null);
 
     const loadPeople = async () => {
         try {
-            setLoading(true);
+            if (!search) setLoading(true);
             const data = await getPeople();
-            setPeople(data);
+
+            const filtered = search ? data.filter(people => 
+                people.firstname.toLowerCase().includes(search.toLowerCase()) || 
+                people.lastname.toLowerCase().includes(search.toLowerCase())
+            ) : data;
+
+            setPeople(filtered);
         } catch (err) {
             console.error(err);
             setError("Não foi possível carregar");
@@ -27,7 +34,7 @@ const HomeScreen = ({ navigation }) => {
     // Garante que a lista carrega ao abrir
     useEffect(() => {
         loadPeople();
-    }, []);
+    }, [search]);
 
     // Garente que a lista atualiza ao voltar da AddEditScreen
     useEffect(() => {
@@ -62,6 +69,14 @@ const HomeScreen = ({ navigation }) => {
                     <Text style={styles.buttonTextAdd}>+ Adicionar Pessoa</Text>
                 </Button>
             </View>
+
+            <TextInput
+              style={styles.input}
+              placeholder="Buscar"
+              placeholderTextColor='#4a9ea8'
+              value={search}
+              onChangeText={setSearch}
+            />
 
             <FlatList 
                 data={people}

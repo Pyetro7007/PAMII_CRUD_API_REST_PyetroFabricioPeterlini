@@ -6,6 +6,34 @@
       "email": "pyetropeterlini@gmail.com",
       "phone": "19998782398",
       "id": "4lVGkGbJruU"
+    },
+    {
+      "firstname": "João",
+      "lastname": "Silva",
+      "email": "joaosilva@gmail.com",
+      "phone": "19999999999",
+      "id": "dKrmBQMFtt8"
+    },
+    {
+      "firstname": "Rafael",
+      "lastname": "Anderson Cruz",
+      "email": "rafael.cruz@gmail.com",
+      "phone": "19899898989",
+      "id": "y_Jkv7QoF6M"
+    },
+    {
+      "firstname": "Pedro",
+      "lastname": "Isaías Gomes de Jesus",
+      "email": "pedrogomes@gmail.com",
+      "phone": "19969669696",
+      "id": "Ru_nWXh2O1A"
+    },
+    {
+      "firstname": "Ronaldo",
+      "lastname": "Oliveira ",
+      "email": "ronaldooliveira@gmail.com",
+      "phone": "11111111111",
+      "id": "-2L1UWuevvQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

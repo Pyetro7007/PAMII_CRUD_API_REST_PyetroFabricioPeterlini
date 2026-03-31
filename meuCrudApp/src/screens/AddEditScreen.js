@@ -54,7 +54,7 @@ const AddEditScreen = ({ route, navigation }) => {
                 style={styles.input}
                 value={firstname}
                 onChangeText={(text) => setFirstname(text.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''))}
-                placeholderTextColor={'#4a9ea8'}
+                placeholderTextColor='#4a9ea8'
                 placeholder="Nome"
                 maxLength={30}
             />
@@ -62,7 +62,7 @@ const AddEditScreen = ({ route, navigation }) => {
                 style={styles.input}
                 value={lastname}
                 onChangeText={(text) => setLastname(text.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''))}
-                placeholderTextColor={'#4a9ea8'}
+                placeholderTextColor='#4a9ea8'
                 placeholder="Sobrenome"
                 maxLength={50}
             />
@@ -70,7 +70,7 @@ const AddEditScreen = ({ route, navigation }) => {
                 style={styles.input}
                 value={email}
                 onChangeText={setEmail}
-                placeholderTextColor={'#4a9ea8'}
+                placeholderTextColor='#4a9ea8'
                 placeholder="Email"
                 keyboardType="email-address"
                 autoCapitalize="none"
@@ -80,7 +80,7 @@ const AddEditScreen = ({ route, navigation }) => {
                 style={styles.input}
                 value={phone}
                 onChangeText={setPhone}
-                placeholderTextColor={'#4a9ea8'}
+                placeholderTextColor='#4a9ea8'
                 placeholder="Telefone"
                 keyboardType="phone-pad"
                 maxLength={11}

@@ -7,7 +7,7 @@ import AddEditScreen from './src/screens/AddEditScreen';
 
 
 const Stack = createStackNavigator();
-
+ 
 export default function App() {
     return (
         <NavigationContainer>
