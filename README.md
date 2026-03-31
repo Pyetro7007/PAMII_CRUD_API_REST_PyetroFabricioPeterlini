@@ -17,6 +17,12 @@ Para clonar o repositório será necessário o seguinte comando:
 https://github.com/Pyetro7007/PAMII_CRUD_API_REST_PyetroFabricioPeterlini.git
 ````
 
+Para acessar a pasta do projeto clonado:
+
+````
+cd PAMII_CRUD_API_REST_PyetroFabricioPeterlini
+````
+
 Antes de executar o aplicativo, instale e inicie o JSON Server na pasta backend:
 
 ````
@@ -34,7 +40,7 @@ npx json-server --watch db.json --port 3000
 Para acessar a pasta do projeto:
 
 ````
-cd PAMII_CRUD_API_REST_PyetroFabricioPeterlini/meuCrudApp
+cd meuCrudApp
 ````
 
 Após acessar, você deve instalar o node_modules e o package-lock.json usando o comando:
