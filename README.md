@@ -1,4 +1,4 @@
-# People CRUD App
+# CRUD no React Native com APIs REST utilizando Fake API (Json-Server)
 
 Esse repositório compartilha um aplicativo mobile simples, desenvolvido em JavaScript (utilizando React Native com Expo). Ele permite que o usuário liste, adicione, edite e remova pessoas por meio de um CRUD completo, consumindo uma API REST fake criada com JSON Server. O foco é no consumo de API (Axios), gerenciamento de estado de loading, busca de registros e navegação (React Navigation).
 
