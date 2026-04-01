@@ -66,4 +66,4 @@ Após executar esse comando, aparecerá um QRcode, que deve ser lido no aplicati
 
 Obs: É necessário ter instalado o Node.js no computador.
 
-Para mais informações acesse o vídeo: 
+Para mais informações acesse o vídeo: https://youtu.be/uJq3QuiQznw
